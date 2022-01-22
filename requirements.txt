@@ -1,0 +1,5 @@
+Flask
+pysqlite3
+influxdb
+requests
+speedtest-cli
