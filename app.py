@@ -1,13 +1,12 @@
 from flask import Flask, render_template
 import sqlite3
-
 import os
 import air_quality
 import speed_test
 import weather
 import logging
 import json
-from influx_utils import extInflux
+#from influx_utils import extInflux
 #from flask_sqlalchemy import SQLAlchemy
 import logging
 import traceback
@@ -15,7 +14,7 @@ import traceback
 app = Flask(__name__)
 #db = SQLAlchemy(app)
 
-#logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 #logging.basicConfig(filename='demo.log', level=logging.DEBUG)
 
 dbFile = 'db\database.db'
@@ -28,6 +27,8 @@ os.environ["influxdbusername"] = "test"
 os.environ["influxdbpass"] = "test"
 os.environ["influxdbdatabase"] = "HomeStatus"
 
+#if __name__ == '__main__':
+    #app.run(host='0.0.0.0', port=os.getenv('PORT'))
 
 @app.route('/')
 def index():
@@ -121,7 +122,7 @@ def init_local_db():
     conn = sqlite3.connect(dbFile)
     print("Opened SQLite database successfully")
 
-    sql_file = open('static\schema.sql')
+    sql_file = open('static/schema.sql')
     sql_as_string = sql_file.read()
     conn.executescript(sql_as_string)
     print("Table created successfully")
