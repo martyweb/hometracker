@@ -2,7 +2,6 @@ from influxdb import InfluxDBClient
 from influxdb.client import InfluxDBClientError
 import os
 
-
 class extInflux:
     _client = False
     _lastError = ""
@@ -21,6 +20,9 @@ class extInflux:
         self.checkConnectivity()
         #self.data = []
 
+    def config(self):
+        return {"host":self._host,"port":self._port}
+    
     def checkConnectivity(self):
         try:
             self._client = InfluxDBClient(

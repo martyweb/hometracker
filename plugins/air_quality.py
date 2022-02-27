@@ -2,9 +2,12 @@ import requests
 import json
 
 class air_quality:
+    _ids=[]
+    vars=['ids']
 
     def run(self, ids):
         id_arry=ids.split()
+        
 
         for id in id_arry:
             print("Getting id " + id)

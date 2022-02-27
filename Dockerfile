@@ -4,6 +4,7 @@ FROM python:3.8.10
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
 
+ENV PORT=5000
 EXPOSE 5000
 
 COPY . /app

@@ -9,6 +9,8 @@ import os
 #--------------------------------------------------------
 class speed_test:
 
+    vars=[]
+
     def run(self):
 
         #linux command
