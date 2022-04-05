@@ -1,6 +1,6 @@
 import requests
 import json
-from utils.plugins import plugins
+# from utils.plugins import plugins
 
 
 class weather:

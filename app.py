@@ -1,21 +1,22 @@
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request
 import sqlite3
 import os
 import sys
-import plugins.air_quality as air_quality
-import plugins.speed_test as speed_test
-import plugins.weather as weather
-import logging
+
+# import plugins.air_quality as air_quality
+# import plugins.speed_test as speed_test
+# import plugins.weather as weather
+# import logging
 import json
 from utils.influx_utils import extInflux
 
 # from flask_sqlalchemy import SQLAlchemy
 import logging
-import traceback
+# import traceback
 from utils.plugins import plugins
 
-import time
-import atexit
+# import time
+# import atexit
 import apscheduler
 from apscheduler.schedulers.background import BackgroundScheduler
 

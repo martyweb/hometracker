@@ -1,4 +1,4 @@
-import requests
+# import requests
 import json
 import os
 
@@ -15,7 +15,9 @@ class speed_test:
         # linux command
         script_response = os.popen("speedtest-cli --json").read()
         # windows command
-        # script_response = os.popen("C:\\Users\\marty\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\Scripts\\speedtest-cli --json").read()
+        # script_response = os.popen("C:\\Users\\marty\\AppData\\Local\\Packages\\
+        # PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\
+        # LocalCache\\local-packages\\Python38\\Scripts\\speedtest-cli --json").read()
 
         # convert string to json object
         json_full_data = json.loads(script_response)
