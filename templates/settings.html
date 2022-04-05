@@ -17,19 +17,30 @@
     {% endfor %}
 </table>
 
+<table class="table">
+    <tr>
+    <th scope="col">Values</th>
+    <tr><td> {{ values['weather']['appid'] }} </td></tr>
+    {% for app in values %}
+        {% for val in values[app] %}
+            <tr><td>{{ app }}</td><td> {{ val }} </td><td> {{ values[app][val] }} </td></tr>
+        {% endfor %}
+    {% endfor %}
+</table>
+
 <h1>List of Configs</h1>
 
-    <form method="post">
+    <form action="{{ url_for('save_config') }}" method="post">
     
     {% for config in configs %}
         
         {% if configs[config]|count > 0 %}
         <div class="form-group">
-            <label for="exampleInputEmail1">{{ config }}</label><br>
+            <label for="{{ config }}.{{ var }}">{{ config }}</label><br>
             
             {% for var in configs[config] %}
                 <label for="{{ config }}.{{ var }}">{{ var }}</label>
-                <input type="input" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ var }}">
+                <input type="input" class="form-control" id="{{ config }}.{{ var }}" aria-describedby="emailHelp" placeholder="{{ var }}" value="{{ values[config][var] }}">
             {% endfor %}
         </div>
         {% endif %}

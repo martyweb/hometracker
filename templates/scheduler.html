@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Schedules</h1>
+
+<table class="table">
+    <tr>
+    <th scope="col">Local Tables</th>
+    </tr>
+    {% for app in data %}
+
+        <tr>
+        <td> {{ app }} </td>
+        </tr>
+
+    {% endfor %}
+</table>
+
+
+{% endblock %}

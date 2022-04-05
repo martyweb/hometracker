@@ -2,6 +2,7 @@ from influxdb import InfluxDBClient
 from influxdb.client import InfluxDBClientError
 import os
 
+
 class extInflux:
     _client = False
     _lastError = ""
@@ -18,15 +19,16 @@ class extInflux:
         self._password = password
         self._database = database
         self.checkConnectivity()
-        #self.data = []
+        # self.data = []
 
     def config(self):
-        return {"host":self._host,"port":self._port}
-    
+        return {"host": self._host, "port": self._port}
+
     def checkConnectivity(self):
         try:
             self._client = InfluxDBClient(
-                self._host, self._port, self._username, self._password, self._database)
+                self._host, self._port, self._username, self._password, self._database
+            )
 
             if self._database in self._client.get_list_database():
                 return True
@@ -50,8 +52,13 @@ class extInflux:
 
     def sendToInflux(json_body):
 
-        client = InfluxDBClient(host=os.environ["influxdbhost"], port=os.environ["influxdbport"],
-                                username=os.environ["influxdbusername"], password=os.environ["influxdbpass"], database=os.environ["influxdbdatabase"])
+        client = InfluxDBClient(
+            host=os.environ["influxdbhost"],
+            port=os.environ["influxdbport"],
+            username=os.environ["influxdbusername"],
+            password=os.environ["influxdbpass"],
+            database=os.environ["influxdbdatabase"],
+        )
 
         try:
             response = client.write_points(json_body)

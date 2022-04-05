@@ -1,43 +1,49 @@
 import requests
 import json
+from utils.plugins import plugins
 
 
 class weather:
 
-        _zip = ''
-        _appid = ''
-        vars=['zip','appid'] #list of configurable vars
+    _zip = ""
+    _appid = ""
+    vars = ["zip", "appid"]  # list of configurable vars
 
-        #def __init__(self, zip, appid):
-                #return 0
+    # def __init__(self, zip, appid):
+    # return 0
 
-        #--------------------------------------------------------
-        #Get weather information from openweather
-        #--------------------------------------------------------
-        def run(self, zip, appid):
-                        
-                url = 'https://api.openweathermap.org/data/2.5/weather?zip='+zip+'&APPID='+appid+'&units=imperial'
-                response = requests.request('GET', url)
-                json_data = json.loads(response.text)
+    # --------------------------------------------------------
+    # Get weather information from openweather
+    # --------------------------------------------------------
+    def run(self, values):
 
-                #error
-                if 'cod' in json_data.keys():
-                        return json_data
+        url = (
+            "https://api.openweathermap.org/data/2.5/weather?zip="
+            + values[__name__]["zip"]
+            + "&APPID="
+            + values[__name__]["appid"]
+            + "&units=imperial"
+        )
+        response = requests.request("GET", url)
+        json_data = json.loads(response.text)
 
-                json_data['main']['temp_max'] = int(json_data['main']['temp_max'])
-                json_data['main']['temp_min'] = int(json_data['main']['temp_min'])
+        # error
+        if "cod" in json_data.keys():
+            return json_data
 
-                json_body = [
-                        {
-                        'measurement': 'main',
-                        'tags': {
-                                'zip': zip,
-                                'timezone':json_data['timezone'],
-                                'name':json_data['name']
-                                },
-                        'fields': json_data['main']
-                        }
-                        ]
+        json_data["main"]["temp_max"] = int(json_data["main"]["temp_max"])
+        json_data["main"]["temp_min"] = int(json_data["main"]["temp_min"])
 
-                return json_body
+        json_body = [
+            {
+                "measurement": "main",
+                "tags": {
+                    "zip": zip,
+                    "timezone": json_data["timezone"],
+                    "name": json_data["name"],
+                },
+                "fields": json_data["main"],
+            }
+        ]
 
+        return json_body

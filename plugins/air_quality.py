@@ -1,37 +1,38 @@
 import requests
 import json
 
-class air_quality:
-    _ids=[]
-    vars=['ids']
 
-    def run(self, ids):
-        id_arry=ids.split()
-        
+class air_quality:
+    _ids = []
+    vars = ["ids"]
+
+    def run(self, values):
+
+        id_arry = values["ids"].split()
 
         for id in id_arry:
             print("Getting id " + id)
 
-            url = "https://www.purpleair.com/json?show="+id
+            url = "https://www.purpleair.com/json?show=" + id
             response = requests.request("GET", url)
             json_data = json.loads(response.text)
 
-            #print("Got this data back:")
-            stats=json.loads(json_data["results"][0]["Stats"])
+            # print("Got this data back:")
+            stats = json.loads(json_data["results"][0]["Stats"])
             del json_data["results"][0]["Stats"]
-            metadata=json_data["results"][0]
+            metadata = json_data["results"][0]
             merged_dict = {**metadata, **stats}
-            #print(merged_dict)
+            # print(merged_dict)
 
             json_body = [
                 {
                     "measurement": "main",
                     "tags": {
                         "id": id,
-                        #"timezone":json_data["timezone"],
-                        "label":merged_dict["Label"]
+                        # "timezone":json_data["timezone"],
+                        "label": merged_dict["Label"],
                     },
-                    "fields": merged_dict
+                    "fields": merged_dict,
                 }
             ]
 
