@@ -2,6 +2,7 @@ venv/
 
 *.pyc
 __pycache__/
+__*.html
 
 instance/
 
@@ -15,3 +16,5 @@ build/
 
 .vscode/
 *.db
+database.db
+
