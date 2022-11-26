@@ -7,7 +7,7 @@ import json
 import urllib
 
 
-class polution:
+class pollution:
     vars = ["zips","key"]
 
     def run(self, values):

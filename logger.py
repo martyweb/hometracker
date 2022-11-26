@@ -2,6 +2,9 @@ import sqlite3
 
 
 class logger:
+    """
+    Deals with logs in local sqllite db
+    """
     dbfile = ""
 
     def __init__(self, dbfile):
