@@ -18,3 +18,4 @@ build/
 *.db
 database.db
 
+flask.log

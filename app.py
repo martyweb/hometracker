@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from logging.config import dictConfig
 import sqlite3
 import os
 import sys
@@ -11,18 +12,46 @@ from utils.influx_utils import extInflux
 import logging
 # import traceback
 from utils.plugins import plugins
+from utils.settings import settings
 
 # import time
 # import atexit
 
 import apscheduler
 from apscheduler.schedulers.background import BackgroundScheduler
+from flask_apscheduler import APScheduler
+
+dictConfig(
+    {
+        "version": 1,
+        "formatters": {
+            "default": {
+                "format": "[%(asctime)s] %(levelname)s in %(module)s: %(message)s",
+            }
+        },
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+                "stream": "ext://sys.stdout",
+                "formatter": "default",
+            },
+            "file": {
+                "class": "logging.FileHandler",
+                "filename": "flask.log",
+                "formatter": "default",
+            },
+        },
+        "root": {
+            "level": "INFO", "handlers": ["console","file"]
+        },
+    }
+)
 
 app = Flask(__name__)
 # db = SQLAlchemy(app)
 
-logging.basicConfig(filename='app.log', level=logging.INFO)
-# logging.basicConfig(filename='demo.log', level=logging.DEBUG)
+#logging.basicConfig(filename='app.log', level=logging.INFO)
+#logging.basicConfig(level=logging.INFO)
 
 app._useInflux = False
 
@@ -30,21 +59,16 @@ app._useInflux = False
 sys.path.append("plugins")
 sys.path.append("utils")
 
-# static env varables, eventually dynamic
-os.environ["influxdbhost"] = "192.168.103.111"
-os.environ["influxdbport"] = "8086"
-os.environ["influxdbusername"] = "test"
-os.environ["influxdbpass"] = "test"
-os.environ["influxdbdatabase"] = "HomeStatus"
-
-os.environ["db_file"] = "database.db"
-os.environ["plugin_path"] = "plugins"
-os.environ["db_path"] = "db"
+#get env varables, set os vars
+values = settings.get_values()
+for value in values:
+    app.logger.info("Setting: " + value + ":" + values[value])
+    os.environ[value] = values[value]
 dbFile = os.environ["db_path"] + "/" + os.environ["db_file"]
 
-if __name__ == "__main__":
+#start some things
+if __name__ == '__main__': 
     app.run(host="0.0.0.0", port=os.getenv("PORT"))
-
 
 @app.route("/")
 def index():
@@ -64,27 +88,27 @@ def env():
 
 @app.route("/log")
 def log():
-    # app.logger.
-    db = sqlite3.connect(dbFile)
-    cur = db.execute("select * from logs limit 1000")
-    data = cur.fetchall()
+    return render_template("log.html")
 
-    return render_template("log.html", data=data)
+@app.route('/logstream')
+def logstream():
+    def generate():
+        with open('flask.log') as f:
+            while True:
+                yield f.read()
+                sleep(1)
 
+    return app.response_class(generate(), mimetype='text/plain')
 
 @app.route("/db")
 def db():
-    db = sqlite3.connect(dbFile)
-    cur = db.execute("SELECT     name FROM     sqlite_master ")
-    data = cur.fetchall()
 
-    return render_template("db.html", data=data, influxdb=get_influxdb())
+    return render_template("db.html", influxdb=get_influxdb())
 
 
 @app.route("/settings", methods=["POST"])
 def save_config():
 
-    print("----------------")
     print(request.form.get("weather.appid"))
     # your code
     # return a response
@@ -93,9 +117,10 @@ def save_config():
 
 @app.route("/settings")
 def view_settings():
-    db = sqlite3.connect(dbFile)
-    cur = db.execute("SELECT * FROM sqlite_master")
-    data = cur.fetchall()
+    # db = sqlite3.connect(dbFile)
+    # cur = db.execute("SELECT * FROM sqlite_master")
+    # data = cur.fetchall()
+    settings_data = settings.get_values()
 
     configs = {}
     for file in os.listdir(os.environ["plugin_path"]):
@@ -107,44 +132,62 @@ def view_settings():
             configs[plugin_name] = instance.vars
             values = plugins.get_values()
 
-    return render_template("settings.html", data=data, configs=configs, values=values)
-
-
-def tick():
-    print("tick")
-    print(run_plugin("pollution"))  
-
+    return render_template("settings.html", data=settings_data, configs=configs, values=values)
 
 @app.route("/scheduler")
-def scheduler():
-    populate_scheduler()
-    
-    data = scheduler.get_jobs()
+def scheduler():    
+    data = app.apscheduler.get_jobs()
     return render_template("scheduler.html", data=data)
 
+def run_plugin(plugin_name):
+    # data = "HomeAdmin"
+    json_data = {"fail"}
+    try:
+
+        module = __import__(plugin_name)
+        class_ = getattr(module, plugin_name)
+        instance = class_()
+
+        
+        values = plugins.get_values()
+
+        json_data = instance.run(values[plugin_name])
+        influxreturn = extInflux.sendToInflux(json_data)
+        
+        app.logger.debug(influxreturn)
+
+    except Exception as e:
+        app.logger.error(e)
+    
+    return json_data
+
+#def tick(plugin):
+    #run_plugin(plugin)
+    #run_plugin("pollution")
+
 def populate_scheduler():
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(tick, "interval", seconds=10)
+    #scheduler = BackgroundScheduler()
+    scheduler = APScheduler()
+    scheduler.init_app(app)
+
+    values = plugins.get_values()
+    
+    for appname in values:
+        
+        if("interval" in values[appname]):
+            scheduler.add_job(func=run_plugin, args=[appname], trigger="interval", seconds=values[appname]["interval"], id=appname)
+
+    #scheduler.add_job(func=run_plugin, args=["air_quality"], trigger="interval", seconds=values["air_quality"]["interval"], id="air quality")
+    #scheduler.add_job(func=run_plugin, args=["pollution"], trigger="interval", seconds=values["pollution"]["interval"], id="pollution")
+    
     scheduler.start()
+    
 
 @app.route("/run/<plugin_name>")
 def run(plugin_name):
     json_formatted = run_plugin(plugin_name)
     return render_template("run.html", json_data=json_formatted)
 
-def run_plugin(plugin_name):
-    # data = "HomeAdmin"
-
-    module = __import__(plugin_name)
-    class_ = getattr(module, plugin_name)
-    instance = class_()
-
-    json_data = {"fail"}
-    values = plugins.get_values()
-
-    json_data = instance.run(values[plugin_name])
-    return json_data
-    # influxreturn = influx_utils.sendToInflux(json_data)
 
 @app.route("/admin")
 def admin():
@@ -216,4 +259,5 @@ def init_local_db():
 
 
 init_local_db()
+populate_scheduler()
 

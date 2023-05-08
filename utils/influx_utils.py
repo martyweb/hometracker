@@ -62,8 +62,8 @@ class extInflux:
 
         try:
             response = client.write_points(json_body)
-            # print("InfluxDB client response: ", response)
-            # print("JSON sent: ", json_body)
+            #print("InfluxDB client response: ", response)
+            #print("JSON sent: ", json_body)
             return response
 
         except InfluxDBClientError as e:

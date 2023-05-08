@@ -28,7 +28,7 @@ class pollution:
 
             json_body = [
             {
-                "measurement": "main",
+                "measurement": "pollution",
                 "tags": {
                     "id": zip,
                     #"timezone":json_data["timezone"],

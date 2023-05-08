@@ -11,3 +11,918 @@ INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 INFO:werkzeug: * Restarting with stat
 INFO:app:apps table good
 INFO:app:apps table good
+INFO:werkzeug:127.0.0.1 - - [26/Nov/2022 17:45:52] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:127.0.0.1 - - [26/Nov/2022 17:49:01] "[35m[1mGET /scheduler HTTP/1.1[0m" 500 -
+ERROR:werkzeug:Error on request:
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 308, in execute
+    application_iter = app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 110, in scheduler
+    data = scheduler.get_jobs()
+AttributeError: 'function' object has no attribute 'get_jobs'
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:127.0.0.1 - - [26/Nov/2022 17:50:40] "[35m[1mGET /scheduler HTTP/1.1[0m" 500 -
+ERROR:werkzeug:Error on request:
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 308, in execute
+    application_iter = app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 116, in scheduler
+    data = scheduler.get_jobs()
+AttributeError: 'function' object has no attribute 'get_jobs'
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug:127.0.0.1 - - [26/Nov/2022 17:53:23] "[35m[1mGET /scheduler HTTP/1.1[0m" 500 -
+ERROR:werkzeug:Error on request:
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 308, in execute
+    application_iter = app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 114, in scheduler
+    data = scheduler.get_jobs()
+AttributeError: 'function' object has no attribute 'get_jobs'
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2022-11-26 17:53:24 CST)" (scheduled at 2022-11-26 17:53:24.227411-06:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2022-11-26 17:53:34 CST)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2022-11-26 17:53:36 CST)" (scheduled at 2022-11-26 17:53:26.619280-06:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2022-11-26 17:53:36 CST)" executed successfully
+INFO:werkzeug:127.0.0.1 - - [26/Nov/2022 17:53:27] "[35m[1mGET /scheduler HTTP/1.1[0m" 500 -
+ERROR:werkzeug:Error on request:
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 308, in execute
+    application_iter = app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 114, in scheduler
+    data = scheduler.get_jobs()
+AttributeError: 'function' object has no attribute 'get_jobs'
+INFO:werkzeug:127.0.0.1 - - [26/Nov/2022 17:53:31] "GET /settings HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Nov/2022 17:53:33] "[35m[1mGET /scheduler HTTP/1.1[0m" 500 -
+ERROR:werkzeug:Error on request:
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/home/marty/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 308, in execute
+    application_iter = app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/marty/.local/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 114, in scheduler
+    data = scheduler.get_jobs()
+AttributeError: 'function' object has no attribute 'get_jobs'
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2022-11-26 17:53:44 CST)" (scheduled at 2022-11-26 17:53:34.227411-06:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2022-11-26 17:53:44 CST)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2022-11-26 17:53:46 CST)" (scheduled at 2022-11-26 17:53:36.619280-06:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2022-11-26 17:53:46 CST)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:52:35 CDT)" (scheduled at 2023-04-03 13:52:35.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:52:45 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:52:36 CDT)" (scheduled at 2023-04-03 13:52:36.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:52:46 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:52:55 CDT)" (scheduled at 2023-04-03 13:52:45.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:52:55 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:52:56 CDT)" (scheduled at 2023-04-03 13:52:46.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:52:56 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:05 CDT)" (scheduled at 2023-04-03 13:52:55.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:05 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:06 CDT)" (scheduled at 2023-04-03 13:52:56.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:06 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:15 CDT)" (scheduled at 2023-04-03 13:53:05.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:15 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:16 CDT)" (scheduled at 2023-04-03 13:53:06.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:16 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:25 CDT)" (scheduled at 2023-04-03 13:53:15.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:25 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:26 CDT)" (scheduled at 2023-04-03 13:53:16.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:26 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:35 CDT)" (scheduled at 2023-04-03 13:53:25.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:35 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:36 CDT)" (scheduled at 2023-04-03 13:53:26.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:36 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:45 CDT)" (scheduled at 2023-04-03 13:53:35.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:45 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:46 CDT)" (scheduled at 2023-04-03 13:53:36.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:46 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:55 CDT)" (scheduled at 2023-04-03 13:53:45.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:55 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:56 CDT)" (scheduled at 2023-04-03 13:53:46.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:53:56 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:05 CDT)" (scheduled at 2023-04-03 13:53:55.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:05 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:06 CDT)" (scheduled at 2023-04-03 13:53:56.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:06 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:15 CDT)" (scheduled at 2023-04-03 13:54:05.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:15 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:16 CDT)" (scheduled at 2023-04-03 13:54:06.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:16 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:25 CDT)" (scheduled at 2023-04-03 13:54:15.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:25 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:26 CDT)" (scheduled at 2023-04-03 13:54:16.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:26 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:35 CDT)" (scheduled at 2023-04-03 13:54:25.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:35 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:36 CDT)" (scheduled at 2023-04-03 13:54:26.992421-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:36 CDT)" executed successfully
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:45 CDT)" (scheduled at 2023-04-03 13:54:35.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:45 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:55 CDT)" (scheduled at 2023-04-03 13:54:45.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:54:55 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:55:05 CDT)" (scheduled at 2023-04-03 13:54:55.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:55:05 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:55:15 CDT)" (scheduled at 2023-04-03 13:55:05.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:55:15 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:55:25 CDT)" (scheduled at 2023-04-03 13:55:15.654002-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 13:55:25 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:56:24 CDT)" (scheduled at 2023-04-03 13:56:24.835836-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:57:24 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:57:26 CDT)" (scheduled at 2023-04-03 13:56:26.130565-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:57:26 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:58:24 CDT)" (scheduled at 2023-04-03 13:57:24.835836-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:58:24 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:58:26 CDT)" (scheduled at 2023-04-03 13:57:26.130565-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:58:26 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:59:24 CDT)" (scheduled at 2023-04-03 13:58:24.835836-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:59:24 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:59:26 CDT)" (scheduled at 2023-04-03 13:58:26.130565-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 13:59:26 CDT)" executed successfully
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:00:24 CDT)" (scheduled at 2023-04-03 13:59:24.835836-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:00:24 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:00:43 CDT)" (scheduled at 2023-04-03 13:59:43.004942-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:00:43 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 132, in tick
+    run_plugin("pollution")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 128, in run_plugin
+    influxreturn = influx_utils.sendToInflux(json_data)
+NameError: name 'influx_utils' is not defined
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:03:51 CDT)" (scheduled at 2023-04-03 14:02:51.528588-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:03:51 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 132, in tick
+    run_plugin("pollution")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 128, in run_plugin
+    influxreturn = influx_utils.sendToInflux(json_data)
+NameError: name 'influx_utils' is not defined
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:03:52 CDT)" (scheduled at 2023-04-03 14:02:52.976869-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:03:52 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 132, in tick
+    run_plugin("pollution")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 128, in run_plugin
+    influxreturn = influx_utils.sendToInflux(json_data)
+NameError: name 'influx_utils' is not defined
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:04:51 CDT)" (scheduled at 2023-04-03 14:03:51.528588-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:04:51 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 132, in tick
+    run_plugin("pollution")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 128, in run_plugin
+    influxreturn = influx_utils.sendToInflux(json_data)
+NameError: name 'influx_utils' is not defined
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:04:52 CDT)" (scheduled at 2023-04-03 14:03:52.976869-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:04:52 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 132, in tick
+    run_plugin("pollution")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 128, in run_plugin
+    influxreturn = influx_utils.sendToInflux(json_data)
+NameError: name 'influx_utils' is not defined
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:09:20 CDT)" (scheduled at 2023-04-03 14:08:20.932715-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:09:20 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:08:22 CDT)" (scheduled at 2023-04-03 14:08:22.350089-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:09:22 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:10:20 CDT)" (scheduled at 2023-04-03 14:09:20.932715-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:10:20 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:10:22 CDT)" (scheduled at 2023-04-03 14:09:22.350089-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:10:22 CDT)" executed successfully
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/utils/influx_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:11:20 CDT)" (scheduled at 2023-04-03 14:10:20.932715-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:11:20 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:11:45 CDT)" (scheduled at 2023-04-03 14:10:45.871243-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:11:45 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:12:20 CDT)" (scheduled at 2023-04-03 14:11:20.932715-05:00)
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Detected change in '/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:24:21 CDT)" (scheduled at 2023-04-03 14:23:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:24:21 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:25:14 CDT)" (scheduled at 2023-04-03 14:24:14.052015-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:25:21 CDT)" (scheduled at 2023-04-03 14:24:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:25:14 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:25:21 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:26:14 CDT)" (scheduled at 2023-04-03 14:25:14.052015-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:26:21 CDT)" (scheduled at 2023-04-03 14:25:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:26:14 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:26:21 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:27:14 CDT)" (scheduled at 2023-04-03 14:26:14.052015-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:27:21 CDT)" (scheduled at 2023-04-03 14:26:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:27:14 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:27:21 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:28:14 CDT)" (scheduled at 2023-04-03 14:27:14.052015-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:28:21 CDT)" (scheduled at 2023-04-03 14:27:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:28:14 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:28:21 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:29:14 CDT)" (scheduled at 2023-04-03 14:28:14.052015-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:29:21 CDT)" (scheduled at 2023-04-03 14:28:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:29:14 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:29:21 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:30:14 CDT)" (scheduled at 2023-04-03 14:29:14.052015-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:30:21 CDT)" (scheduled at 2023-04-03 14:29:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:30:14 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:30:21 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:31:14 CDT)" (scheduled at 2023-04-03 14:30:14.052015-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:31:21 CDT)" (scheduled at 2023-04-03 14:30:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:31:14 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:31:21 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:32:14 CDT)" (scheduled at 2023-04-03 14:31:14.052015-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:32:21 CDT)" (scheduled at 2023-04-03 14:31:21.030823-05:00)
+ERROR:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:32:14 CDT)" raised an exception
+Traceback (most recent call last):
+  File "/home/marty/.local/lib/python3.8/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 134, in tick
+    run_plugin("air_quality")
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/app.py", line 127, in run_plugin
+    json_data = instance.run(values[plugin_name])
+  File "/mnt/c/users/marty/Google Drive/Projects/hometracker/plugins/air_quality.py", line 18, in run
+    json_data = json.loads(response.text)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:33:27 CDT)" (scheduled at 2023-04-03 14:32:27.279707-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:33:28 CDT)" (scheduled at 2023-04-03 14:32:28.652929-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:33:27 CDT)" executed successfully
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:01:00], next run at: 2023-04-03 14:33:28 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:34:51 CDT)" (scheduled at 2023-04-03 14:34:41.577278-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:34:53 CDT)" (scheduled at 2023-04-03 14:34:43.031861-05:00)
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:34:51 CDT)" skipped: maximum number of running instances reached (1)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:35:01 CDT)" executed successfully
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:34:53 CDT)" skipped: maximum number of running instances reached (1)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:35:03 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:36:31 CDT)" (scheduled at 2023-04-03 14:36:31.163231-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:36:42 CDT)" (scheduled at 2023-04-03 14:36:32.555354-05:00)
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:36:41 CDT)" skipped: maximum number of running instances reached (1)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:36:51 CDT)" executed successfully
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:36:42 CDT)" skipped: maximum number of running instances reached (1)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:36:52 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:37:12 CDT)" (scheduled at 2023-04-03 14:37:12.605892-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:37:23 CDT)" (scheduled at 2023-04-03 14:37:13.905080-05:00)
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:37:22 CDT)" skipped: maximum number of running instances reached (1)
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:37:23 CDT)" skipped: maximum number of running instances reached (1)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:37:32 CDT)" executed successfully
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:37:33 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:38:29 CDT)" (scheduled at 2023-04-03 14:38:19.554326-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:38:30 CDT)" (scheduled at 2023-04-03 14:38:20.855723-05:00)
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:38:29 CDT)" skipped: maximum number of running instances reached (1)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:38:39 CDT)" executed successfully
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:38:30 CDT)" skipped: maximum number of running instances reached (1)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:38:40 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:39:17 CDT)" (scheduled at 2023-04-03 14:39:07.305486-05:00)
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:39:08 CDT)" (scheduled at 2023-04-03 14:39:08.650175-05:00)
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:39:17 CDT)" skipped: maximum number of running instances reached (1)
+WARNING:apscheduler.scheduler:Execution of job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:39:18 CDT)" skipped: maximum number of running instances reached (1)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:39:27 CDT)" executed successfully
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:39:28 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:42:40 CDT)" (scheduled at 2023-04-03 14:42:40.243067-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:42:50 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:42:41 CDT)" (scheduled at 2023-04-03 14:42:41.704740-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:42:51 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:44:45 CDT)" (scheduled at 2023-04-03 14:44:35.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:44:45 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:44:47 CDT)" (scheduled at 2023-04-03 14:44:37.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:44:47 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:44:55 CDT)" (scheduled at 2023-04-03 14:44:45.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:44:55 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:44:57 CDT)" (scheduled at 2023-04-03 14:44:47.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:44:57 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:05 CDT)" (scheduled at 2023-04-03 14:44:55.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:05 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:07 CDT)" (scheduled at 2023-04-03 14:44:57.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:07 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:15 CDT)" (scheduled at 2023-04-03 14:45:05.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:15 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:17 CDT)" (scheduled at 2023-04-03 14:45:07.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:17 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:25 CDT)" (scheduled at 2023-04-03 14:45:15.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:25 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:27 CDT)" (scheduled at 2023-04-03 14:45:17.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:27 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:35 CDT)" (scheduled at 2023-04-03 14:45:25.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:35 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:37 CDT)" (scheduled at 2023-04-03 14:45:27.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:37 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:45 CDT)" (scheduled at 2023-04-03 14:45:35.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:45 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:47 CDT)" (scheduled at 2023-04-03 14:45:37.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:47 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:55 CDT)" (scheduled at 2023-04-03 14:45:45.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:55 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:57 CDT)" (scheduled at 2023-04-03 14:45:47.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:45:57 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:05 CDT)" (scheduled at 2023-04-03 14:45:55.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:05 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:07 CDT)" (scheduled at 2023-04-03 14:45:57.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:07 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:15 CDT)" (scheduled at 2023-04-03 14:46:05.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:15 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:17 CDT)" (scheduled at 2023-04-03 14:46:07.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:17 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:25 CDT)" (scheduled at 2023-04-03 14:46:15.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:25 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:27 CDT)" (scheduled at 2023-04-03 14:46:17.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:27 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:35 CDT)" (scheduled at 2023-04-03 14:46:25.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:35 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:37 CDT)" (scheduled at 2023-04-03 14:46:27.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:37 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:45 CDT)" (scheduled at 2023-04-03 14:46:35.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:45 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:47 CDT)" (scheduled at 2023-04-03 14:46:37.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:47 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:55 CDT)" (scheduled at 2023-04-03 14:46:45.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:55 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:57 CDT)" (scheduled at 2023-04-03 14:46:47.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:46:57 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:05 CDT)" (scheduled at 2023-04-03 14:46:55.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:05 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:07 CDT)" (scheduled at 2023-04-03 14:46:57.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:07 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:15 CDT)" (scheduled at 2023-04-03 14:47:05.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:15 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:17 CDT)" (scheduled at 2023-04-03 14:47:07.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:17 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:25 CDT)" (scheduled at 2023-04-03 14:47:15.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:25 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:27 CDT)" (scheduled at 2023-04-03 14:47:17.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:27 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:35 CDT)" (scheduled at 2023-04-03 14:47:25.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:35 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:37 CDT)" (scheduled at 2023-04-03 14:47:27.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:37 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:45 CDT)" (scheduled at 2023-04-03 14:47:35.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:45 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:47 CDT)" (scheduled at 2023-04-03 14:47:37.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:47 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:55 CDT)" (scheduled at 2023-04-03 14:47:45.476375-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:55 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:57 CDT)" (scheduled at 2023-04-03 14:47:47.125181-05:00)
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:47:57 CDT)" executed successfully
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:app:apps table good
+INFO:app:apps table good
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "tick" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:52:11 CDT)" (scheduled at 2023-04-03 14:52:11.554021-05:00)
+DEBUG:app:True
+DEBUG:app:True
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:52:21 CDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:52:22 CDT)" (scheduled at 2023-04-03 14:52:12.864777-05:00)
+DEBUG:app:True
+DEBUG:app:True
+INFO:apscheduler.executors.default:Job "tick (trigger: interval[0:00:10], next run at: 2023-04-03 14:52:22 CDT)" executed successfully

@@ -2,23 +2,20 @@
 
 {% block body %}
 
-<h1>List of apps</h1>
+<h1>Log</h1>
 
-<table class="table">
-    <tr>
-    <th scope="col">Text</th>
-    <th scope="col">Date</th>
-    </tr>
-    {% for log in data %}
+<pre id="output"></pre>
+<script>
+    var output = document.getElementById('output');
 
-        <tr>
-        <td> {{ app[1] }} </td>
-        <td> {{ app[2] }} </td>
-        </tr>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '{{ url_for('logstream') }}');
+    xhr.send();
 
-    {% endfor %}
-
-</table>
+    setInterval(function() {
+        output.textContent = xhr.responseText;
+    }, 1000);
+</script>
 
 
 {% endblock %}

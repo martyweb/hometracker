@@ -13,26 +13,34 @@ class air_quality:
         for id in id_arry:
             print("Getting id " + id)
 
-            url = "https://www.purpleair.com/json?show=" + id
-            response = requests.request("GET", url)
+            url = "https://api.purpleair.com/v1/sensors/"+id
+            headers = { 'X-API-Key' : values["key"]}
+            response = requests.request("GET", url, headers=headers)
             json_data = json.loads(response.text)
 
-            # print("Got this data back:")
-            stats = json.loads(json_data["results"][0]["Stats"])
-            del json_data["results"][0]["Stats"]
-            metadata = json_data["results"][0]
-            merged_dict = {**metadata, **stats}
-            # print(merged_dict)
+            #print("Got this data back:")
+            #print(json_data)
 
+            #remove all stats nodes b/c it was causing problems
+            temp_data=[]
+            for data in json_data["sensor"]:
+                if "stats" in data:
+                    temp_data.append(data)
+            for remove in temp_data:
+                del json_data["sensor"][remove]
+
+            #--------------------------------------------------------
+            #post data to influxdb
+            #--------------------------------------------------------
             json_body = [
                 {
-                    "measurement": "main",
+                    "measurement": "air_quality",
                     "tags": {
                         "id": id,
-                        # "timezone":json_data["timezone"],
-                        "label": merged_dict["Label"],
+                        #"timezone":json_data["timezone"],
+                        "label":json_data["sensor"]["name"]
                     },
-                    "fields": merged_dict,
+                    "fields": json_data["sensor"]
                 }
             ]
 

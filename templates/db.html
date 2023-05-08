@@ -2,21 +2,6 @@
 
 {% block body %}
 
-<h1>List of SQLite tables</h1>
-
-<table class="table">
-    <tr>
-    <th scope="col">Local Tables</th>
-    </tr>
-    {% for app in data %}
-
-        <tr>
-        <td> {{ app[0] }} </td>
-        </tr>
-
-    {% endfor %}
-</table>
-
 <h1>Influx Status</h1>
 <p>
 {{ influxdb.checkConnectivity()}}

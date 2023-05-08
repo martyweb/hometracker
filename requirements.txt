@@ -5,3 +5,4 @@ requests
 speedtest-cli
 apscheduler==2.1.2
 pdoc
+Flask-APScheduler

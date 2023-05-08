@@ -2,20 +2,22 @@
 
 {% block body %}
 
-<h1>List of SQLite tables</h1>
+<h1>List of Settings</h1>
 
 <table class="table">
     <tr>
-    <th scope="col">Local Tables</th>
+    <th scope="col">Settings Class</th>
     </tr>
     {% for app in data %}
 
         <tr>
-        <td> {{ app[0] }} </td>
+        <td> {{ app }} </td><td> {{ data[app] }} </td>
         </tr>
 
     {% endfor %}
 </table>
+
+<h1>List of Plugin Values</h1>
 
 <table class="table">
     <tr>
@@ -28,7 +30,7 @@
     {% endfor %}
 </table>
 
-<h1>List of Configs</h1>
+<h1>Configs Form</h1>
 
     <form action="{{ url_for('save_config') }}" method="post">
     
