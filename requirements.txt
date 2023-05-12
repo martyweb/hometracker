@@ -6,3 +6,4 @@ speedtest-cli
 apscheduler #==3.2.0
 pdoc
 Flask-APScheduler
+black
