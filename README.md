@@ -1,3 +1,5 @@
+[![Python package](https://github.com/martyweb/hometracker/actions/workflows/workflow.yml/badge.svg)](https://github.com/martyweb/hometracker/actions/workflows/workflow.yml)
+
 # Overview
 Get data from various API's, pump it into influxdb
 
