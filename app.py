@@ -3,6 +3,7 @@ from logging.config import dictConfig
 import sqlite3
 import os
 import sys
+import time
 
 # import logging
 import json
@@ -96,7 +97,7 @@ def logstream():
         with open('flask.log') as f:
             while True:
                 yield f.read()
-                sleep(1)
+                time.sleep(1)
 
     return app.response_class(generate(), mimetype='text/plain')
 
