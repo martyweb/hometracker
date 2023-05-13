@@ -16,7 +16,6 @@ class weather:
     # Get weather information from openweather
     # --------------------------------------------------------
     def run(self, values):
-        
         url = (
             "https://api.openweathermap.org/data/2.5/weather?zip="
             + values["zip"]
@@ -24,11 +23,9 @@ class weather:
             + values["appid"]
             + "&units=imperial"
         )
-        
+
         response = requests.request("GET", url)
-        
         json_data = json.loads(response.text)
-        
         # error - took this back out so not sure why it was here
         # if "cod" in json_data.keys():
         #     return json_data

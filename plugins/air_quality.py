@@ -14,7 +14,7 @@ class air_quality:
             print("Getting id " + id)
 
             url = "https://api.purpleair.com/v1/sensors/"+id
-            headers = { 'X-API-Key' : values["key"]}
+            headers = {'X-API-Key': values["key"]}
             response = requests.request("GET", url, headers=headers)
             json_data = json.loads(response.text)
 
@@ -29,9 +29,7 @@ class air_quality:
             for remove in temp_data:
                 del json_data["sensor"][remove]
 
-            #--------------------------------------------------------
             #post data to influxdb
-            #--------------------------------------------------------
             json_body = [
                 {
                     "measurement": "air_quality",

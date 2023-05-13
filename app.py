@@ -5,21 +5,21 @@ import os
 import sys
 import time
 
-# import logging
-import json
+#import logging
+#import json
 from utils.influx_utils import extInflux
 
-# from flask_sqlalchemy import SQLAlchemy
-import logging
-# import traceback
+#from flask_sqlalchemy import SQLAlchemy
+#import logging
+#import traceback
 from utils.plugins import plugins
 from utils.settings import settings
 
-# import time
-# import atexit
+#import time
+#import atexit
 
-import apscheduler
-from apscheduler.schedulers.background import BackgroundScheduler
+#import apscheduler
+#from apscheduler.schedulers.background import BackgroundScheduler
 from flask_apscheduler import APScheduler
 
 dictConfig(
@@ -43,7 +43,7 @@ dictConfig(
             },
         },
         "root": {
-            "level": "INFO", "handlers": ["console","file"]
+            "level": "INFO", "handlers": ["console", "file"]
         },
     }
 )
@@ -51,8 +51,8 @@ dictConfig(
 app = Flask(__name__)
 # db = SQLAlchemy(app)
 
-#logging.basicConfig(filename='app.log', level=logging.INFO)
-#logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(filename='app.log', level=logging.INFO)
+# logging.basicConfig(level=logging.INFO)
 
 app._useInflux = False
 
@@ -68,7 +68,7 @@ for value in values:
 dbFile = os.environ["db_path"] + "/" + os.environ["db_file"]
 
 #start some things
-if __name__ == '__main__': 
+if __name__ == '__main__':
     app.run(host="0.0.0.0", port=os.getenv("PORT"))
 
 @app.route("/")
@@ -136,7 +136,7 @@ def view_settings():
     return render_template("settings.html", data=settings_data, configs=configs, values=values)
 
 @app.route("/scheduler")
-def scheduler():    
+def scheduler():
     data = app.apscheduler.get_jobs()
     return render_template("scheduler.html", data=data)
 
@@ -148,8 +148,6 @@ def run_plugin(plugin_name):
         module = __import__(plugin_name)
         class_ = getattr(module, plugin_name)
         instance = class_()
-
-        
         values = plugins.get_values()
 
         json_data = instance.run(values[plugin_name])
@@ -180,9 +178,8 @@ def populate_scheduler():
 
     #scheduler.add_job(func=run_plugin, args=["air_quality"], trigger="interval", seconds=values["air_quality"]["interval"], id="air quality")
     #scheduler.add_job(func=run_plugin, args=["pollution"], trigger="interval", seconds=values["pollution"]["interval"], id="pollution")
-    
+
     scheduler.start()
-    
 
 @app.route("/run/<plugin_name>")
 def run(plugin_name):
