@@ -3,7 +3,7 @@ name: Python package
 on: [push]
 
 jobs:
-  build:
+  build_and_test:
 
     runs-on: ubuntu-latest
     strategy:
@@ -33,4 +33,9 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-          pytest
+          pytest --cov=./ --cov-report xml
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: coverage.xml
