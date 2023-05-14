@@ -19,3 +19,6 @@ build/
 database.db
 
 flask.log
+
+coverage.xml
+database.db
