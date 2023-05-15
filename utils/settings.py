@@ -2,7 +2,7 @@
 
 class settings:
     '''
-    Settings utils
+    Application Settings
     '''
 
     def get_values():
