@@ -8,7 +8,7 @@ class settings:
     def get_values():
 
         return {
-            "influxdbhost": "192.168.103.111",
+            "influxdbhost": "192.168.103.122",
             "influxdbport": "8086",
             "influxdbusername": "test",
             "influxdbpass": "test",
