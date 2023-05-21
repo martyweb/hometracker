@@ -227,11 +227,13 @@ def query_db(query, args=(), one=False):
 # create initial tables
 def init_local_db():
 
+    #make sure db dir exits
     if not os.path.exists(dbFile):
-        print("DB file {{dbFile}} doesn't exist")
+        app.logger.info(f"DB file {dbFile} doesn't exist")
+        os.makedirs("db")
 
     conn = sqlite3.connect(dbFile)
-    print("Opened SQLite database successfully")
+    app.logger.info("Opened SQLite database successfully")
 
     # schema check
     cur = conn.execute('SELECT * FROM sqlite_master WHERE type ="table"')
