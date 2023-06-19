@@ -1,5 +1,4 @@
-# import json
-
+import json
 
 class plugins:
     '''
@@ -7,10 +6,10 @@ class plugins:
     '''
     def get_values():
         
-        import json
-
-        with open('config.json', 'r') as f:
+        with open('config-plugins.json', 'r') as f:
             data = json.load(f)
+
+        #TODO: check data from file that it conforms to standards
 
         return data
 
