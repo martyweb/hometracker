@@ -3,10 +3,20 @@
 {% block body %}
 
 <h1>Log</h1>
-
-<pre id="output"></pre>
+<style>
+    .output {
+        overflow-x:scroll;
+        display: block; 
+        white-space: pre;
+        border:1px;
+        border-color:lightgray;
+    }
+</style>
+<div id="output" class="w-100 p-3 output "></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
     var output = document.getElementById('output');
+    var parentNode =  output.parentNode;
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '{{ url_for('logstream') }}');
@@ -14,7 +24,18 @@
 
     setInterval(function() {
         output.textContent = xhr.responseText;
+        output.scrollTop = output.scrollHeight;
     }, 1000);
+
+    $(document).ready(function() {
+        var bodyheight = $(parent).height()-270;
+        $("#output").height(bodyheight);
+        $(window).resize(function() {
+            bodyheight = $(parent).height()-270;
+                $("#output").height(bodyheight);
+            }).resize();
+        });
+
 </script>
 
 
