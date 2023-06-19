@@ -7,5 +7,5 @@
     "db_file": "database.db",
     "plugin_path": "plugins",
     "db_path": "db",
-    "granfana_host": "https://grafana.martyweb.com",
+    "granfana_host": "https://grafana.martyweb.com"
 }
