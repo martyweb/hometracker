@@ -8,7 +8,7 @@ class air_quality:
 
     def run(self, values):
 
-        id_arry = values["ids"].split()
+        id_arry = values["ids"].split(",")
 
         for id in id_arry:
             print("Getting id " + id)
@@ -18,8 +18,9 @@ class air_quality:
             response = requests.request("GET", url, headers=headers)
             json_data = json.loads(response.text)
 
-            #print("Got this data back:")
-            #print(json_data)
+            # print("Got this data back:")
+            # print(url)
+            # print(json_data)
 
             #remove all stats nodes b/c it was causing problems
             temp_data=[]
