@@ -1,5 +1,6 @@
 Flask
 #pysqlite3
+influxdb-client
 influxdb
 requests
 speedtest-cli

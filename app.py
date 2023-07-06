@@ -5,21 +5,16 @@ import os
 import sys
 import time
 
-#import logging
-#import json
-from utils.influx_utils import extInflux
+#from utils.influx_utils import extInflux
+from utils.influx2_utils import extInflux2
 
 #from flask_sqlalchemy import SQLAlchemy
-#import logging
-#import traceback
 from utils.plugins import plugins
 from utils.settings import settings
 
 #import time
 #import atexit
 
-#import apscheduler
-#from apscheduler.schedulers.background import BackgroundScheduler
 from flask_apscheduler import APScheduler
 
 dictConfig(
@@ -54,7 +49,8 @@ app = Flask(__name__)
 # logging.basicConfig(filename='app.log', level=logging.INFO)
 # logging.basicConfig(level=logging.INFO)
 
-app._useInflux = False
+#app._useInflux = False
+app._useInflux2 = False
 
 # add in library folders
 sys.path.append("plugins")
@@ -104,7 +100,7 @@ def logstream():
 @app.route("/db")
 def db():
 
-    return render_template("db.html", influxdb=get_influxdb())
+    return render_template("db.html", influxdb2=get_influxdb2())
 
 
 @app.route("/settings", methods=["POST"])
@@ -151,8 +147,16 @@ def run_plugin(plugin_name):
         values = plugins.get_values()
 
         json_data = instance.run(values[plugin_name])
-        influxreturn = extInflux.sendToInflux(json_data)
-        
+        # influxreturn = extInflux.sendToInflux(json_data)
+        # app.logger.debug(influxreturn)
+
+        influxdb2 = extInflux2(
+            os.environ["influxdb2host"],
+            os.environ["influxdb2token"],
+            os.environ["influxdb2org"],
+            os.environ["influxdb2bucket"]
+        )
+        influxreturn = influxdb2.sendToInflux(json_data[0])
         app.logger.debug(influxreturn)
 
     except Exception as e:
@@ -200,20 +204,35 @@ def get_db():
     return db
 
 
-def get_influxdb():
-    db = getattr(app, "_influxdb", None)
-    app._useInflux = False
+# def get_influxdb():
+#     db = getattr(app, "_influxdb", None)
+#     app._useInflux = False
+#     if db is None:
+#         db = app._influxdb = extInflux(
+#             os.environ["influxdbhost"],
+#             os.environ["influxdbport"],
+#             os.environ["influxdbusername"],
+#             os.environ["influxdbpass"],
+#             os.environ["influxdbdatabase"],
+#         )
+
+#     if db.checkConnectivity():
+#         app._useInflux = True
+#     return db
+
+def get_influxdb2():
+    db = getattr(app, "_influxdb2", None)
+    app._useInflux2 = False
     if db is None:
-        db = app._influxdb = extInflux(
-            os.environ["influxdbhost"],
-            os.environ["influxdbport"],
-            os.environ["influxdbusername"],
-            os.environ["influxdbpass"],
-            os.environ["influxdbdatabase"],
+        db = app._influxdb2 = extInflux2(
+            os.environ["influxdb2host"],
+            os.environ["influxdb2token"],
+            os.environ["influxdb2org"],
+            os.environ["influxdb2bucket"]
         )
 
     if db.checkConnectivity():
-        app._useInflux = True
+        app._useInflux2 = True
     return db
 
 

@@ -2,11 +2,11 @@
 
 {% block body %}
 
-<h1>Influx Status</h1>
+<h1>Influx2 Status</h1>
 <p>
-{{ influxdb.checkConnectivity()}}
+{{ influxdb2.checkConnectivity()}}
 </p><p>
-{{ influxdb._lastError}}
+{{ influxdb2._lastError}}
 </p>
 
 {% endblock %}
