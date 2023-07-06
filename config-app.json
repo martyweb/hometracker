@@ -5,7 +5,7 @@
     "influxdbpass": "test",
     "influxdbdatabase":"HomeStatus",
     "influxdb2host":"http://192.168.103.124:8086",
-    "influxdb2token":"3sdeBqZgbBqphdHLqI50JK3sbyawlA5EW9RWtV830l6o3_8PKSSTrbPtvrW81MJdbPKqAaZrC4_ntWukNYoBzQ==",
+    "influxdb2token":"7RhUEkxBr9zCU2X2WpYGKTGypwnal1231AmTM_OW2EwdF0bcNY1iD3CUQv1xqu9suZw0mxmzSNmFUM0jF3l0aw==",
     "influxdb2org":"HomeStatus",
     "influxdb2bucket":"HomeStatus",
     "db_file": "database.db",
