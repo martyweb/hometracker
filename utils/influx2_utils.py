@@ -100,7 +100,7 @@ class extInflux2:
         print('Total Rows Inserted:', len(data))
 
     def error_cb(self, details, data, exception):
-        print(exc)
+        print(exception)
 
     def retry_cb(self, details, data, exception):
-        print('Retrying because of an exception:', exc)
+        print('Retrying because of an exception:', exception)
