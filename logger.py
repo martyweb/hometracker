@@ -13,5 +13,6 @@ class logger:
     # @staticmethod
     def add(self, logtext):
         db = sqlite3.connect(self.dbfile)
-        cur = db.execute('insert or ignore into logs VALUES(null, "test", null);')
+        cur = db.execute(
+            'insert or ignore into logs VALUES(null, "test", null);')
         return cur

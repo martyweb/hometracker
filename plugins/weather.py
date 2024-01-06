@@ -32,7 +32,7 @@ class weather:
 
         json_data["main"]["temp_max"] = int(json_data["main"]["temp_max"])
         json_data["main"]["temp_min"] = int(json_data["main"]["temp_min"])
-        
+
         json_body = [
             {
                 "measurement": "weather",

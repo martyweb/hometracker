@@ -10,8 +10,8 @@ class extInflux2:
     _lastError = ""
     _host = ""
     _org = ""
-    _token=""
-    _bucket=""
+    _token = ""
+    _bucket = ""
 
     def __init__(self, host, token, org, bucket):
         self._host = host
@@ -27,12 +27,15 @@ class extInflux2:
     def checkConnectivity(self):
         ready = False
         try:
-            self._client = InfluxDBClient(url=self._host, token=self._token, org=self._org)
-            
+            self._client = InfluxDBClient(
+                url=self._host, token=self._token, org=self._org)
+
             if self._bucket is not None:
                 influxdb_buckets_api = self._client.buckets_api()
-                my_bucket = influxdb_buckets_api.find_bucket_by_name(self._bucket)
-                if my_bucket is None: self.createbucket(self._bucket)
+                my_bucket = influxdb_buckets_api.find_bucket_by_name(
+                    self._bucket)
+                if my_bucket is None:
+                    self.createbucket(self._bucket)
 
             ready = self._client.ready()
 
@@ -40,12 +43,11 @@ class extInflux2:
             print(e)
             #self._lastError = e.content
             return False
-        
+
         return ready
 
-
     def createbucket(self, bucketname):
-        
+
         influxdb_orgs_api = self._client.organizations_api()
         org_info = influxdb_orgs_api.find_organizations(org=self._org)
 
@@ -64,23 +66,24 @@ class extInflux2:
 
     def sendToInflux(self, json_data, bucket=None):
 
-        if bucket is None and self._bucket is not None: bucket=self._bucket
-            
+        if bucket is None and self._bucket is not None:
+            bucket = self._bucket
 
         point = Point.from_dict(
             json_data,
             WritePrecision.MS
         )
-        
 
         try:
-            influxdb_write_api = self._client.write_api(write_options=SYNCHRONOUS)
+            influxdb_write_api = self._client.write_api(
+                write_options=SYNCHRONOUS)
             # print("writing")
             # print(bucket)
             # print(self._org)
             # print(json)
-            response = influxdb_write_api.write(bucket=bucket, org=self._org, record=point)
-            
+            response = influxdb_write_api.write(
+                bucket=bucket, org=self._org, record=point)
+
             #print("InfluxDB client response: ", response)
             #print("JSON sent: ", json_body)
             return response
@@ -94,10 +97,10 @@ class extInflux2:
         url, token, org = details
         print(url, token, org)
         data = data.decode('utf-8').split('\n')
-        print('Total Rows Inserted:', len(data))  
+        print('Total Rows Inserted:', len(data))
 
     def error_cb(self, details, data, exception):
         print(exc)
 
     def retry_cb(self, details, data, exception):
-        print('Retrying because of an exception:', exc)  
+        print('Retrying because of an exception:', exc)

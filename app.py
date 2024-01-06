@@ -56,16 +56,17 @@ app._useInflux2 = False
 sys.path.append("plugins")
 sys.path.append("utils")
 
-#get env varables, set os vars
+# get env varables, set os vars
 values = settings.get_values()
 for value in values:
     app.logger.info("Setting: " + value + ":" + values[value])
     os.environ[value] = values[value]
 dbFile = os.environ["db_path"] + "/" + os.environ["db_file"]
 
-#start some things
+# start some things
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=os.getenv("PORT"))
+
 
 @app.route("/")
 def index():
@@ -87,6 +88,7 @@ def env():
 def log():
     return render_template("log.html")
 
+
 @app.route('/logstream')
 def logstream():
     def generate():
@@ -96,6 +98,7 @@ def logstream():
                 time.sleep(1)
 
     return app.response_class(generate(), mimetype='text/plain')
+
 
 @app.route("/db")
 def db():
@@ -131,10 +134,12 @@ def view_settings():
 
     return render_template("settings.html", data=settings_data, configs=configs, values=values, plugin_names=plugin_names)
 
+
 @app.route("/scheduler")
 def scheduler():
     data = app.apscheduler.get_jobs()
     return render_template("scheduler.html", data=data)
+
 
 def run_plugin(plugin_name):
     # data = "HomeAdmin"
@@ -162,12 +167,13 @@ def run_plugin(plugin_name):
     except Exception as e:
         app.logger.error("Error running " + plugin_name)
         app.logger.error(e)
-    
+
     return json_data
 
-#def tick(plugin):
-    #run_plugin(plugin)
-    #run_plugin("pollution")
+# def tick(plugin):
+    # run_plugin(plugin)
+    # run_plugin("pollution")
+
 
 def populate_scheduler():
     app.logger.info("Populating Scheduler")
@@ -176,15 +182,17 @@ def populate_scheduler():
     scheduler.init_app(app)
 
     values = plugins.get_values()
-    
+
     for appname in values:
         if("interval" in values[appname]):
-            scheduler.add_job(func=run_plugin, args=[appname], trigger="interval", seconds=values[appname]["interval"], id=appname)
+            scheduler.add_job(func=run_plugin, args=[
+                              appname], trigger="interval", seconds=values[appname]["interval"], id=appname)
 
     #scheduler.add_job(func=run_plugin, args=["air_quality"], trigger="interval", seconds=values["air_quality"]["interval"], id="air quality")
     #scheduler.add_job(func=run_plugin, args=["pollution"], trigger="interval", seconds=values["pollution"]["interval"], id="pollution")
 
     scheduler.start()
+
 
 @app.route("/run/<plugin_name>")
 def run(plugin_name):
@@ -247,7 +255,7 @@ def query_db(query, args=(), one=False):
 # create initial tables
 def init_local_db():
 
-    #make sure db dir exits
+    # make sure db dir exits
     if not os.path.exists(dbFile):
         app.logger.info(f"DB file {dbFile} doesn't exist")
         os.makedirs("db")
@@ -259,7 +267,7 @@ def init_local_db():
     cur = conn.execute('SELECT * FROM sqlite_master WHERE type ="table"')
     rows = cur.fetchall()
 
-    #check if tables exist
+    # check if tables exist
     for row in rows:
         if "config" in row:
             app.logger.error("config table good")
@@ -270,7 +278,7 @@ def init_local_db():
 
     print(rows)
 
-    #load with default schema
+    # load with default schema
     sql_file = open("static/schema.sql")
     sql_as_string = sql_file.read()
     conn.executescript(sql_as_string)
@@ -280,4 +288,3 @@ def init_local_db():
 
 init_local_db()
 populate_scheduler()
-

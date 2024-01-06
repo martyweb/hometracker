@@ -22,22 +22,22 @@ class air_quality:
             # print(url)
             # print(json_data)
 
-            #remove all stats nodes b/c it was causing problems
-            temp_data=[]
+            # remove all stats nodes b/c it was causing problems
+            temp_data = []
             for data in json_data["sensor"]:
                 if "stats" in data:
                     temp_data.append(data)
             for remove in temp_data:
                 del json_data["sensor"][remove]
 
-            #post data to influxdb
+            # post data to influxdb
             json_body = [
                 {
                     "measurement": "air_quality",
                     "tags": {
                         "id": id,
-                        #"timezone":json_data["timezone"],
-                        "label":json_data["sensor"]["name"]
+                        # "timezone":json_data["timezone"],
+                        "label": json_data["sensor"]["name"]
                     },
                     "fields": json_data["sensor"]
                 }

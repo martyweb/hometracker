@@ -1,16 +1,17 @@
 import json
 import os
 
+
 class plugins:
     '''
     Plugin utils
     '''
     def get_values():
-        
+
         with open('config-plugins.json', 'r') as f:
             data = json.load(f)
 
-        #TODO: check data from file that it conforms to standards
+        # TODO: check data from file that it conforms to standards
 
         return data
 
