@@ -1,4 +1,4 @@
-version: "3.3"
+version: "2"
 services:
   influxdb:
       image: influxdb:latest
@@ -7,15 +7,22 @@ services:
       volumes:
         - influxdb-storage:/var/lib/influxdb
       environment:
-        - INFLUXDB_DB=db0
+        - INFLUXDB_DB=HomeStatus
         - INFLUXDB_ADMIN_USER=test
         - INFLUXDB_ADMIN_PASSWORD=test
         #- INFLUXDB_ADMIN_USER=${INFLUXDB_USERNAME}
         #- INFLUXDB_ADMIN_PASSWORD=${INFLUXDB_PASSWORD}
+        - DOCKER_INFLUXDB_INIT_MODE=setup
+        - DOCKER_INFLUXDB_INIT_USERNAME=test
+        - DOCKER_INFLUXDB_INIT_PASSWORD=test
+        - DOCKER_INFLUXDB_INIT_ORG=my-org
+        - DOCKER_INFLUXDB_INIT_BUCKET=HomeStatus
+        - DOCKER_INFLUXDB_INIT_RETENTION=1w
+        - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-auth-token
   web:
     build: .
-    volumes: 
-        - .:/app
+    # volumes: 
+    #     - .:/app
     ports:
       - "5000:5000"
     #volumes:
@@ -25,7 +32,7 @@ services:
     environment: 
       PORT: 5000
       FLASK_DEBUG: 1
-      influxdbhost: "192.168.103.111"
+      influxdbhost: influxdb
       influxdbport: "8086"
       influxdbusername: "test"
       influxdbpass: "test"
