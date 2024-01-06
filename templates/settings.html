@@ -6,7 +6,8 @@
 
 <table class="table">
     <tr>
-    <th scope="col">Settings Class</th>
+    <th scope="col">Setting</th>
+    <th scope="col">Value</th>
     </tr>
     {% for app in data %}
 
@@ -17,12 +18,25 @@
     {% endfor %}
 </table>
 
+<h1>List of Plugins</h1>
+
+<table class="table">
+    <tr>
+        <th scope="col">Plugin</th>
+    </tr>
+    {% for plugin in plugin_names %}
+        <tr><td>{{ plugin }} </td></tr>
+    {% endfor %}
+</table>
+
 <h1>List of Plugin Values</h1>
 
 <table class="table">
     <tr>
-    <th scope="col">Values</th>
-    <tr><td> {{ values['weather']['appid'] }} </td></tr>
+        <th scope="col">App</th>
+        <th scope="col">Field</th>
+        <th scope="col">Value</th>
+    </tr>
     {% for app in values %}
         {% for val in values[app] %}
             <tr><td>{{ app }}</td><td> {{ val }} </td><td> {{ values[app][val] }} </td></tr>
