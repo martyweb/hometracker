@@ -4,8 +4,9 @@
 Flask application that will collect data from various API's and store data in influxdb for reporting
 
 Note: this project still needs a lot of work
-<img src="/static/images/home_screen.png" width=100 alt="Home Screen">
-<img src="/static/images/grafana_sample.png" width=100 alt="Grafana Sample">
+<BR>
+<img src="/static/images/home_screen.png" width=200 alt="Home Screen"><BR>
+<img src="/static/images/grafana_sample.png" width=200 alt="Grafana Sample">
 
 ## Prerequisites
 - InfluxDB
