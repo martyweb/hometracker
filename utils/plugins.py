@@ -1,4 +1,5 @@
 import json
+import os
 
 class plugins:
     '''
@@ -19,3 +20,12 @@ class plugins:
         #     "speed_test": {"zip": "60564", "interval": 60},
         #     "pollution": {"zips": "60564", "key": "15c6d1063b5b819c4a1eb6e47dc8dd4b", "interval": 60},
         # }
+
+    def get_plugins():
+        plugin_names = []
+        for file in os.listdir(os.environ["plugin_path"]):
+            if "__" not in file and ".py" in file:
+                plugin_name = file.replace(".py", "")
+                plugin_names.append(plugin_name)
+
+        return plugin_names
