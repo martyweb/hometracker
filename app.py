@@ -120,16 +120,16 @@ def view_settings():
     settings_data = settings.get_values()
 
     configs = {}
-    for file in os.listdir(os.environ["plugin_path"]):
-        if "__" not in file and ".py" in file:
-            plugin_name = file.replace(".py", "")
-            module = __import__(plugin_name)
-            class_ = getattr(module, plugin_name)
-            instance = class_()
-            configs[plugin_name] = instance.vars
-            values = plugins.get_values()
+    plugin_names = []
+    for plugin_name in plugins.get_plugins():
+        module = __import__(plugin_name)
+        class_ = getattr(module, plugin_name)
+        instance = class_()
+        configs[plugin_name] = instance.vars
+        values = plugins.get_values()
+        plugin_names.append(plugin_name)
 
-    return render_template("settings.html", data=settings_data, configs=configs, values=values)
+    return render_template("settings.html", data=settings_data, configs=configs, values=values, plugin_names=plugin_names)
 
 @app.route("/scheduler")
 def scheduler():
@@ -160,6 +160,7 @@ def run_plugin(plugin_name):
         app.logger.debug(influxreturn)
 
     except Exception as e:
+        app.logger.error("Error running " + plugin_name)
         app.logger.error(e)
     
     return json_data
@@ -169,6 +170,7 @@ def run_plugin(plugin_name):
     #run_plugin("pollution")
 
 def populate_scheduler():
+    app.logger.info("Populating Scheduler")
     #scheduler = BackgroundScheduler()
     scheduler = APScheduler()
     scheduler.init_app(app)
@@ -176,7 +178,6 @@ def populate_scheduler():
     values = plugins.get_values()
     
     for appname in values:
-        
         if("interval" in values[appname]):
             scheduler.add_job(func=run_plugin, args=[appname], trigger="interval", seconds=values[appname]["interval"], id=appname)
 
