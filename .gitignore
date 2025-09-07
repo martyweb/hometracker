@@ -22,3 +22,5 @@ flask.log
 
 coverage.xml
 database.db
+
+.venv/
