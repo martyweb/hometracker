@@ -1,0 +1,29 @@
+[project]
+name = "hometracker"
+description = "Home stats tracker application"
+version = "0.1.0"
+authors = [
+    { name = "martyweb" }
+]
+
+requires-python = ">=3.11"
+
+dependencies = [
+    "Flask",
+    "influxdb-client",
+    "influxdb",
+    "requests",
+    "speedtest-cli",
+    "apscheduler",
+    "pdoc",
+    "Flask-APScheduler",
+    "black"
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["app", "db", "plugins", "utils"]
+
