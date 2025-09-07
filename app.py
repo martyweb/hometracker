@@ -185,11 +185,9 @@ def populate_scheduler():
 
     for appname in values:
         if("interval" in values[appname]):
+            app.logger.info("Created scheduler job for " + appname)
             scheduler.add_job(func=run_plugin, args=[
                               appname], trigger="interval", seconds=values[appname]["interval"], id=appname)
-
-    #scheduler.add_job(func=run_plugin, args=["air_quality"], trigger="interval", seconds=values["air_quality"]["interval"], id="air quality")
-    #scheduler.add_job(func=run_plugin, args=["pollution"], trigger="interval", seconds=values["pollution"]["interval"], id="pollution")
 
     scheduler.start()
 
