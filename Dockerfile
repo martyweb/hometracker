@@ -1,7 +1,7 @@
 #FROM ubuntu:18.04
 FROM python:3.11.10
 
-RUN apt-get update -y && apt-get install -y python-pip python-dev build-essential
+RUN apt-get update -y && apt-get install -y python3-pip python3-dev build-essential
 
 ENV PORT=5000
 EXPOSE 5000

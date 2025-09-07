@@ -34,14 +34,29 @@ Uses speedtest-cli to get internet speeds
 ## Pollution
 Pulls data from openweathermap.org
 
+# Running Locally
+
+```
+sudo apt update
+sudo apt install python3.11 python3.11-venv
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+flask run --host 0.0.0.0
+```
+
 # Running container
 Containers are built and published, you can run them like this:
 
+```
 docker-compose up --force-recreate --build
+```
 
 or
 
+```
 docker run \
   --name hometracker \
   -p 80:5000 \
   -d ghcr.io/martyweb/hometracker:master
+```
