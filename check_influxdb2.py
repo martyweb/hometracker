@@ -3,8 +3,13 @@
 import os
 from utils.influx2_utils import extInflux2
 
-infdb2 = extInflux2("http://192.168.103.124:8086",
-                    "3sdeBqZgbBqphdHLqI50JK3sbyawlA5EW9RWtV830l6o3_8PKSSTrbPtvrW81MJdbPKqAaZrC4_ntWukNYoBzQ==", "HomeStatus", "HomeStatus")
+host=os.environ["influxdbhost"],
+port=os.environ["influxdbport"],
+username=os.environ["influxdbusername"],
+password=os.environ["influxdbpass"],
+database=os.environ["influxdbdatabase"],
+
+infdb2 = extInflux2(host,"", "HomeStatus", "HomeStatus")
 response = infdb2.checkConnectivity()
 print(response)
 
