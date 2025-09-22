@@ -4,9 +4,7 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
-on:     
-  branches:
-    - main
+on: [push]
 
 jobs:
   build_and_test:
@@ -45,7 +43,7 @@ jobs:
         with:
           name: code-coverage-report
           path: coverage.xml
-  - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
